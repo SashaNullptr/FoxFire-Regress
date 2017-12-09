@@ -26,6 +26,7 @@
 // Project Specific Headers
 // Generic
 #include "../Generic/generics.hpp"
+#include "../Generic/debug.hpp"
 // Solvers
 #include "../Solvers/base_solver.hpp"
 #include "../Solvers/abstractsolver.hpp"
@@ -196,7 +197,7 @@ Eigen::Matrix<int, Eigen::Dynamic, 1> FOS<T>::ReturnSupport() {
 
     T n_t = static_cast<T>( n );
     T cut_off = static_cast<T>( 6 )*C*lambda/n_t;
-    DEBUG_PRINT( "Cut-off for Support Computation: " << cut_off );
+//    DEBUG_PRINT( "Cut-off for Support Computation: " << cut_off );
 
     return GenerateSupport( fos_fit, cut_off );
 //    return fos_fit.unaryExpr( SupportSift<T>( C_t, lambda, n_t ) );

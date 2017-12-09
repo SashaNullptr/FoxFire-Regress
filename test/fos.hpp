@@ -16,6 +16,7 @@
 #include "gtest/gtest.h"
 // Project Specific Headers
 #include "../FOS/fos.hpp"
+#include "utils.hpp"
 
 namespace foxfire {
 
@@ -71,6 +72,14 @@ bool FOSTester<T>::operator()(unsigned int N, unsigned int P,
 	fos(X, Y, s_type);
 
 	Eigen::Matrix<T, Eigen::Dynamic, 1> Beta_Lambda = fos.ReturnCoefficients();
+	Eigen::Matrix<int, Eigen::Dynamic, 1> support = fos.ReturnSupport();
+
+	// Filter out signifigant coefficients
+	for (unsigned int i = 0; i < support.size(); i++) {
+		if (support[i] == 0) {
+			Beta_Lambda[i] = 0.0;
+		}
+	}
 	T Lambda = fos.ReturnLambda();
 
 	return (KKTApproximate(X, Y, Beta_Lambda, Lambda, b, C_comp, gamma));
@@ -78,30 +87,34 @@ bool FOSTester<T>::operator()(unsigned int N, unsigned int P,
 }
 
 template<typename T>
-bool TestFOS(unsigned int N, unsigned int P, SolverType s_type) {
+bool TestFOS(SolverType s_type) {
+
+	unsigned int N = urandUint(100) + 2;
+	unsigned int P = urandUint(100) + 2;
 
 	FOSTester<T> tester;
-	return tester( N, P, s_type );
+	return tester(N, P, s_type);
 }
 
-TEST(FOS, PlainSolvers) {
-    ASSERT_TRUE( TestFOS<double>( 20, 50, foxfire::SolverType::ista ) );
-    ASSERT_TRUE( TestFOS<double>( 20, 50, foxfire::SolverType::fista ) );
-    ASSERT_TRUE( TestFOS<double>( 20, 50, foxfire::SolverType::cd ) );
+TEST(FOS, ISTA) {
+	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::ista));
+	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::screen_ista));
+	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::ista));
+	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::screen_ista));
 }
 
-TEST(FOS, ScreeningSolvers) {
-    ASSERT_TRUE( TestFOS<double>( 20, 50, foxfire::SolverType::screen_ista ) );
-    ASSERT_TRUE( TestFOS<double>( 20, 50, foxfire::SolverType::screen_fista ) );
-    ASSERT_TRUE( TestFOS<double>( 20, 50, foxfire::SolverType::screen_cd ) );
+TEST(FOS, FISTA) {
+	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::fista));
+	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::screen_fista));
+	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::fista));
+	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::screen_fista));
 }
 
-TEST(FOS, DoublePrecision) {
-    ASSERT_TRUE( TestFOS<double>( 20, 50, foxfire::SolverType::fista ) );
-}
-
-TEST(FOS, SinglePrecision) {
-    ASSERT_TRUE( TestFOS<float>( 20, 50, foxfire::SolverType::fista ) );
+TEST(FOS, CoordinateDescent) {
+	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::cd));
+	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::screen_cd));
+	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::cd));
+	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::screen_cd));
 }
 
 }
