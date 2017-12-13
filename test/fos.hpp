@@ -101,12 +101,13 @@ bool FOSTester<T>::operator()(unsigned int N, unsigned int P,
 template<typename T>
 bool TestFOS(SolverType s_type) {
 
+	FOSTester<T> tester;
+
 	unsigned int N = rand() % 50 + 2;
 	unsigned int P = rand() % 100 + 2;
 
 	std::cout << "Test matrix size: " << N << " x " << P << std::endl;
 
-	FOSTester<T> tester;
 	return tester(N, P, s_type);
 }
 
