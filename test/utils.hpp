@@ -14,6 +14,10 @@
 // Project Specific Headers
 //
 
+namespace foxfire {
+
+namespace test {
+
 template<typename T>
 bool ApproximatelyEqual(const T& a, const T& b) {
 	return std::abs(a - b)
@@ -61,7 +65,7 @@ public:
 	}
 
 private:
-static unsigned long x = 123456789, y = 362436069, z = 521288629;
+unsigned long x = 123456789, y = 362436069, z = 521288629;
 unsigned int max_uint;
 
 unsigned long xorshf96(void) { //period 2^96-1
@@ -106,6 +110,10 @@ unsigned int GenerateRandSeed() {
 
 unsigned int urandUint(unsigned int max_val) {
 	return (unsigned int) rand() % max_val;
+}
+
+}
+
 }
 
 #endif /* TEST_UTILS_HPP_ */

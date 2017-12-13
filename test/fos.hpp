@@ -16,9 +16,12 @@
 #include "gtest/gtest.h"
 // Project Specific Headers
 #include "../FOS/fos.hpp"
+#include "synthentic_data_gen.hpp"
 #include "utils.hpp"
 
 namespace foxfire {
+
+namespace test {
 
 template<typename T>
 class FOSTester {
@@ -64,10 +67,19 @@ bool FOSTester<T>::KKTApproximate(
 template<typename T>
 bool FOSTester<T>::operator()(unsigned int N, unsigned int P,
 		SolverType s_type) {
-	Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic> X = Eigen::Matrix<T,
-			Eigen::Dynamic, Eigen::Dynamic>::Random(N, P);
-	Eigen::Matrix<T, Eigen::Dynamic, 1> Y =
-			Eigen::Matrix<T, Eigen::Dynamic, 1>::Random(N, 1);
+//
+//	Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic> X = Eigen::Matrix<T,
+//			Eigen::Dynamic, Eigen::Dynamic>::Random(N, P);
+//	Eigen::Matrix<T, Eigen::Dynamic, 1> Y =
+//			Eigen::Matrix<T, Eigen::Dynamic, 1>::Random(N);
+
+	unsigned int num_active_vars = static_cast<unsigned int>(std::ceil(
+			static_cast<T>(P) / 10.0));
+
+	SyntheticDataGenerator<T> data_generator(N, P, num_active_vars, 0.3, 5.0);
+
+	Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic> X = data_generator.X();
+	Eigen::Matrix<T, Eigen::Dynamic, 1> Y = data_generator.Y();
 
 	fos(X, Y, s_type);
 
@@ -89,8 +101,10 @@ bool FOSTester<T>::operator()(unsigned int N, unsigned int P,
 template<typename T>
 bool TestFOS(SolverType s_type) {
 
-	unsigned int N = urandUint(100) + 2;
-	unsigned int P = urandUint(100) + 2;
+	unsigned int N = rand() % 50 + 2;
+	unsigned int P = rand() % 100 + 2;
+
+	std::cout << "Test matrix size: " << N << " x " << P << std::endl;
 
 	FOSTester<T> tester;
 	return tester(N, P, s_type);
@@ -115,6 +129,8 @@ TEST(FOS, CoordinateDescent) {
 	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::screen_cd));
 	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::cd));
 	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::screen_cd));
+}
+
 }
 
 }

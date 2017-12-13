@@ -82,3 +82,4 @@ doxygen/
 .projec
 /Debug
 /Release
+.settings/
