@@ -50,9 +50,8 @@ public:
 //						* Mat<T> { mean.rows(), num_obs }.unaryExpr(
 //								[&](auto x) {return dist(gen);});
 
-		return (transform
-				* Mat<T> { mean.rows(), num_obs }.unaryExpr(
-						[&](T x) {return dist(gen);})).transpose();
+		return (Mat<T> { num_obs, transform.cols() }.unaryExpr(
+				[&](T x) {return dist(gen);}) * transform);
 	}
 
 private:
