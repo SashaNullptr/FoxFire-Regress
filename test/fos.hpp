@@ -67,11 +67,6 @@ bool FOSTester<T>::KKTApproximate(
 template<typename T>
 bool FOSTester<T>::operator()(unsigned int N, unsigned int P,
 		SolverType s_type) {
-//
-//	Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic> X = Eigen::Matrix<T,
-//			Eigen::Dynamic, Eigen::Dynamic>::Random(N, P);
-//	Eigen::Matrix<T, Eigen::Dynamic, 1> Y =
-//			Eigen::Matrix<T, Eigen::Dynamic, 1>::Random(N);
 
 	unsigned int num_active_vars = static_cast<unsigned int>(std::ceil(
 			static_cast<T>(P) / 10.0));
@@ -86,7 +81,7 @@ bool FOSTester<T>::operator()(unsigned int N, unsigned int P,
 	Eigen::Matrix<T, Eigen::Dynamic, 1> Beta_Lambda = fos.ReturnCoefficients();
 	Eigen::Matrix<int, Eigen::Dynamic, 1> support = fos.ReturnSupport();
 
-	// Filter out signifigant coefficients
+	// Filter out significant coefficients
 	for (unsigned int i = 0; i < support.size(); i++) {
 		if (support[i] == 0) {
 			Beta_Lambda[i] = 0.0;
@@ -101,12 +96,14 @@ bool FOSTester<T>::operator()(unsigned int N, unsigned int P,
 template<typename T>
 bool TestFOS(SolverType s_type) {
 
+	DEBUG_PRINT( "Using DEBUG configuration" );
+
 	FOSTester<T> tester;
 
-	unsigned int N = rand() % 50 + 2;
+	unsigned int N = rand() % 100 + 2;
 	unsigned int P = rand() % 100 + 2;
 
-	std::cout << "Test matrix size: " << N << " x " << P << std::endl;
+	DEBUG_PRINT( "Test matrix size: " << N << " x " << P );
 
 	return tester(N, P, s_type);
 }
@@ -131,6 +128,15 @@ TEST(FOS, CoordinateDescent) {
 	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::cd));
 	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::screen_cd));
 }
+
+#ifdef W_OPENCL
+TEST(FOS, OpenCL) {
+	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::cl_ista));
+	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::cl_fista));
+	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::cl_ista));
+	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::cl_fista));
+}
+#endif
 
 }
 

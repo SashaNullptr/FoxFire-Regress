@@ -2,7 +2,7 @@
 
 #include "viennacl_ista.hpp"
 
-template class hdim::CL_ISTA<float,hdim::internal::CL_Solver<float>>;
-template class hdim::CL_ISTA<double,hdim::internal::CL_Solver<double>>;
+template class foxfire::CL_ISTA<float,foxfire::internal::CL_Solver<float>>;
+template class foxfire::CL_ISTA<double,foxfire::internal::CL_Solver<double>>;
 
 #endif

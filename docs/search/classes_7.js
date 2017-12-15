@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['openclbase',['OpenCLBase',['../classocl_1_1_open_c_l_base.html',1,'ocl']]]
+  ['random_5fuint_5fgenerator',['random_uint_generator',['../classfoxfire_1_1test_1_1random__uint__generator.html',1,'foxfire::test']]]
 ];

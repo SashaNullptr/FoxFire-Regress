@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hdim',['HDIM',['../md__home_bephillips2_Qt-Projects_FOSRedux_README.html',1,'']]]
+  ['ista',['ISTA',['../classfoxfire_1_1_i_s_t_a.html',1,'foxfire']]]
 ];

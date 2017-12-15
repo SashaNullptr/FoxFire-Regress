@@ -1,7 +1,7 @@
 var NAVTREE =
 [
-  [ "HDIM", "index.html", [
-    [ "HDIM", "md__home_bephillips2_Qt-Projects_FOSRedux_README.html", null ],
+  [ "FoxFire-regression", "index.html", [
+    [ "FoxFire/regression", "md__home_bephillips2_eclipse-workspace_FoxFire-regression_README.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -24,8 +24,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 ".html",
-"classhdim__1__1__f__i__s__t__a_8js_source.html",
-"struct__f__i__s__t__a__1__1__group__lasso__l2_8js_source.html"
+"classfoxfire_1_1internal_1_1_screening_solver.html#a64ae4f7526753747b6857c8d15ad531b",
+"generics_8hpp.html#ad3eafab12f8cbb7b895b0c144a1d65c7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

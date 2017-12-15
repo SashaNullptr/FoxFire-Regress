@@ -1,0 +1,5 @@
+<map id="foxfire::CoordinateDescentWithScreen&lt; T &gt;" name="foxfire::CoordinateDescentWithScreen&lt; T &gt;">
+<area shape="rect" id="node2" href="$classfoxfire_1_1internal_1_1_solver.html" title="Abstract base class for solvers that do not make use of GAP SAFE screening rules. ..." alt="" coords="37,184,153,225"/>
+<area shape="rect" id="node3" href="$classfoxfire_1_1internal_1_1_abstract_solver.html" title="Abstract base class for all iterative solvers. " alt="" coords="25,95,165,136"/>
+<area shape="rect" id="node4" href="$classfoxfire_1_1internal_1_1_base_solver.html" title="Abstract base class for all iterative solvers. " alt="" coords="34,5,155,47"/>
+</map>

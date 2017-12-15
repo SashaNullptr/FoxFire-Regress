@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lazycoordinatedescent',['LazyCoordinateDescent',['../classhdim_1_1_lazy_coordinate_descent.html',1,'hdim']]]
+  ['normal_5frandom_5fvariable',['normal_random_variable',['../classfoxfire_1_1test_1_1normal__random__variable.html',1,'foxfire::test']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hdim',['HDIM',['../md__home_bephillips2_Qt-Projects_FOSRedux_README.html',1,'']]]
+  ['foxfire_2fregression',['FoxFire/regression',['../md__home_bephillips2_eclipse-workspace_FoxFire-regression_README.html',1,'']]]
 ];

@@ -18,113 +18,106 @@
 
 namespace foxfire {
 
-template < typename T, typename Base = internal::CL_Solver< T > >
+template<typename T, typename Base = internal::CL_Solver<T> >
 /*!
  * \brief Run the Fast Iterative Shrinking and Thresholding Algorthim.
  */
-class CL_FISTA : public internal::CL_SubGradientSolver<T,Base> {
+class CL_FISTA: public internal::CL_SubGradientSolver<T, Base> {
 
-  public:
-    CL_FISTA( const Eigen::Matrix< T, Eigen::Dynamic, 1 >& Beta_0, T L_0 = 0.1 );
+public:
+	CL_FISTA(const Eigen::Matrix<T, Eigen::Dynamic, 1>& Beta_0, T L_0 = 0.1);
 
-  protected:
-    viennacl::vector<T> update_rule(
-        const viennacl::matrix<T>& X,
-        const viennacl::vector<T>& Y,
-        const viennacl::vector<T>& Beta_0,
-        T lambda );
+protected:
+	viennacl::vector<T> update_rule(const viennacl::matrix<T>& X,
+			const viennacl::vector<T>& Y, const viennacl::vector<T>& Beta_0,
+			T lambda);
 
-  private:
+private:
 
-    viennacl::vector<T> update_beta_fista (
-        const viennacl::matrix<T>& X,
-        const viennacl::vector<T>& Y,
-        const viennacl::vector<T>& Beta,
-        T L,
-        T thres );
+	viennacl::vector<T> update_beta_fista(const viennacl::matrix<T>& X,
+			const viennacl::vector<T>& Y, const viennacl::vector<T>& Beta, T L,
+			T thres);
 
-    viennacl::vector<T> y_k;
-    viennacl::vector<T> y_k_old;
+	viennacl::vector<T> y_k;
+	viennacl::vector<T> y_k_old;
 
-    viennacl::vector<T> x_k_less_1;
+	viennacl::vector<T> x_k_less_1;
 
-    const T eta = 1.5;
-    T t_k = static_cast<T>( 1 );
-    T L = static_cast<T>( 0 );
+	const T eta = 1.5;
+	T t_k = static_cast<T>(1);
+	T L = static_cast<T>(0);
 };
 
-template < typename T, typename Base >
-CL_FISTA<T,Base>::CL_FISTA( const Eigen::Matrix< T, Eigen::Dynamic, 1 >& Beta_0, T L_0 ) : internal::CL_SubGradientSolver<T,Base>( L_0 ) {
+template<typename T, typename Base>
+CL_FISTA<T, Base>::CL_FISTA(const Eigen::Matrix<T, Eigen::Dynamic, 1>& Beta_0,
+		T L_0) :
+		internal::CL_SubGradientSolver<T, Base>(L_0) {
 
-    y_k = viennacl::vector<T>( Beta_0.rows() );
-    y_k_old = viennacl::vector<T>( Beta_0.rows() );
+	y_k = viennacl::vector<T>(Beta_0.rows());
+	y_k_old = viennacl::vector<T>(Beta_0.rows());
 
-    viennacl::copy( Beta_0, y_k );
-    t_k = static_cast<T>( 1 );
+	viennacl::copy(Beta_0, y_k);
+	t_k = static_cast<T>(1);
 }
 
-template < typename T, typename Base >
-viennacl::vector<T> CL_FISTA<T,Base>::update_beta_fista (
-    const viennacl::matrix<T> &X,
-    const viennacl::vector<T> &Y,
-    const viennacl::vector<T> &Beta,
-    T L,
-    T thres ) {
+template<typename T, typename Base>
+viennacl::vector<T> CL_FISTA<T, Base>::update_beta_fista(
+		const viennacl::matrix<T> &X, const viennacl::vector<T> &Y,
+		const viennacl::vector<T> &Beta, T L, T thres) {
 
-    viennacl::vector<T> x_k = Beta;
+	viennacl::vector<T> x_k = Beta;
 
-    x_k_less_1 = x_k;
-    x_k = internal::CL_SubGradientSolver<T,Base>::update_beta_ista( X, Y, y_k, L, thres );
+	x_k_less_1 = x_k;
+	x_k = internal::CL_SubGradientSolver<T, Base>::update_beta_ista(X, Y, y_k,
+			L, thres);
 
-    T t_k_plus_1 = ( 1.0 + std::sqrt( 1.0 + 4.0 * square( t_k ) ) ) / 2.0;
-    t_k = t_k_plus_1;
+	T t_k_plus_1 = (1.0 + std::sqrt(1.0 + 4.0 * square(t_k))) / 2.0;
+	t_k = t_k_plus_1;
 
-    y_k = x_k + ( t_k - 1.0 ) / ( t_k_plus_1 ) * ( x_k - x_k_less_1 );
+	y_k = x_k + (t_k - 1.0) / (t_k_plus_1) * (x_k - x_k_less_1);
 
-    return x_k;
+	return x_k;
 }
 
 #ifdef DEBUG
 template < typename T, typename Base >
 viennacl::vector<T> CL_FISTA<T, Base>::update_rule(
-    const viennacl::matrix<T> &X,
-    const viennacl::vector<T> &Y,
-    const viennacl::vector<T> &Beta,
-    T lambda ) {
+		const viennacl::matrix<T> &X,
+		const viennacl::vector<T> &Y,
+		const viennacl::vector<T> &Beta,
+		T lambda ) {
 
-    L = internal::CL_SubGradientSolver<T,Base>::L_0;
+	L = internal::CL_SubGradientSolver<T,Base>::L_0;
 
-    viennacl::copy( Beta, y_k );
+	viennacl::copy( Beta, y_k );
 
 //    y_k = Beta;
 
-    y_k_old = y_k;
+	y_k_old = y_k;
 
-    viennacl::vector<T> y_k_temp = internal::CL_SubGradientSolver<T,Base>::update_beta_ista( X, Y, y_k, L, lambda );
+	viennacl::vector<T> y_k_temp = internal::CL_SubGradientSolver<T,Base>::update_beta_ista( X, Y, y_k, L, lambda );
 
-    unsigned int counter = 0;
+	unsigned int counter = 0;
 
-    while( ( internal::CL_SubGradientSolver<T,Base>::f_beta( X, Y, y_k_temp ) > internal::CL_SubGradientSolver<T,Base>::f_beta_tilda( X, Y, y_k_temp, y_k_old, L ) ) ) {
+	while( ( internal::CL_SubGradientSolver<T,Base>::f_beta( X, Y, y_k_temp ) > internal::CL_SubGradientSolver<T,Base>::f_beta_tilda( X, Y, y_k_temp, y_k_old, L ) ) ) {
 
-        counter++;
-        DEBUG_PRINT( "Backtrace iteration: " << counter );
+		counter++;
+		DEBUG_PRINT( "Backtrace iteration: " << counter );
 
-        L*= eta;
+		L*= eta;
 
-        DEBUG_PRINT( "L: " << L );
-        y_k_temp = internal::CL_SubGradientSolver<T,Base>::update_beta_ista( X, Y, Beta, L, lambda );
+		DEBUG_PRINT( "L: " << L );
+		y_k_temp = internal::CL_SubGradientSolver<T,Base>::update_beta_ista( X, Y, Beta, L, lambda );
 
-    }
+	}
 
-    return update_beta_fista( X, Y, Beta, L, lambda );;
+	return update_beta_fista( X, Y, Beta, L, lambda );;
 }
 #else
-template < typename T, typename Base >
-viennacl::vector<T> CL_FISTA<T,Base>::update_rule(
-    const viennacl::matrix<T> &X,
-    const viennacl::vector<T> &Y,
-    const viennacl::vector<T> &Beta,
-    T lambda ) {
+template<typename T, typename Base>
+viennacl::vector<T> CL_FISTA<T, Base>::update_rule(const viennacl::matrix<T> &X,
+		const viennacl::vector<T> &Y, const viennacl::vector<T> &Beta,
+		T lambda) {
 
 //    L = internal::CL_SubGradientSolver<T,Base>::L_0;
 
@@ -152,34 +145,40 @@ viennacl::vector<T> CL_FISTA<T,Base>::update_rule(
 
 //    T f_beta_tilde = taylor_term_0 + taylor_term_1 + taylor_term_2;
 
-    L = internal::CL_SubGradientSolver<T,Base>::L_0;
+	L = internal::CL_SubGradientSolver<T, Base>::L_0;
 
-    viennacl::copy( Beta, y_k );
+	viennacl::copy(Beta, y_k);
 
-    y_k_old = y_k;
+	y_k_old = y_k;
 
-    viennacl::vector<T> f_grad =  2.0*viennacl::linalg::prod( viennacl::trans( X ), viennacl::linalg::prod( X, y_k_old ) - Y );
-    viennacl::vector<T> to_modify = y_k_old - (1.0/L)*f_grad;
+	viennacl::vector<T> f_grad = 2.0
+			* viennacl::linalg::prod(viennacl::trans(X),
+					viennacl::linalg::prod(X, y_k_old) - Y);
+	viennacl::vector<T> to_modify = y_k_old - (1.0 / L) * f_grad;
 
-    viennacl::vector<T> thres_( 1 );
-    viennacl::copy( std::vector<T> { lambda / L }, thres_ );
+	viennacl::vector<T> thres_(1);
+	viennacl::copy(std::vector<T> { lambda / L }, thres_);
 
-    viennacl::vector<T> y_k_temp ( y_k.size() );
-    viennacl::ocl::enqueue( hdim::internal::CL_SubGradientSolver<T,Base>::soft_thres_kernel_->operator()( to_modify, y_k_temp, thres_ ) );
+	viennacl::vector<T> y_k_temp(y_k.size());
+	viennacl::ocl::enqueue(
+			foxfire::internal::CL_SubGradientSolver<T, Base>::soft_thres_kernel_->operator()(
+					to_modify, y_k_temp, thres_));
 
-    T f_beta = norm_sqr( static_cast<viennacl::vector<T>>(viennacl::linalg::prod( X, y_k_temp ) - Y ) );
-    viennacl::vector<T> f_part = viennacl::linalg::prod( X, y_k_old ) - Y;
+	T f_beta = norm_sqr(
+			static_cast<viennacl::vector<T>>(viennacl::linalg::prod(X, y_k_temp)
+					- Y));
+	viennacl::vector<T> f_part = viennacl::linalg::prod(X, y_k_old) - Y;
 
-    T taylor_term_0 = norm_sqr( f_part );
-    viennacl::vector<T> beta_diff = y_k_temp - y_k_old;
+	T taylor_term_0 = norm_sqr(f_part);
+	viennacl::vector<T> beta_diff = y_k_temp - y_k_old;
 
-    T taylor_term_1 = viennacl::linalg::inner_prod( f_grad , beta_diff );
+	T taylor_term_1 = viennacl::linalg::inner_prod(f_grad, beta_diff);
 
-    T taylor_term_2 = (L/2.0)*norm_sqr( beta_diff );
+	T taylor_term_2 = (L / 2.0) * norm_sqr(beta_diff);
 
-    T f_beta_tilde = taylor_term_0 + taylor_term_1 + taylor_term_2;
+	T f_beta_tilde = taylor_term_0 + taylor_term_1 + taylor_term_2;
 
-    while( f_beta > f_beta_tilde ) {
+	while (f_beta > f_beta_tilde) {
 
 //        counter++;
 //        DEBUG_PRINT( "Backtrace iteration: " << counter );
@@ -198,58 +197,63 @@ viennacl::vector<T> CL_FISTA<T,Base>::update_rule(
 
 //        f_beta_tilde = taylor_term_0 + taylor_term_1 + taylor_term_2;
 
-        L*= eta;
+		L *= eta;
 
-        to_modify = y_k_old - (1.0/L)*f_grad;
+		to_modify = y_k_old - (1.0 / L) * f_grad;
 
-        viennacl::copy( std::vector<T> { lambda / L }, thres_ );
-        viennacl::ocl::enqueue( hdim::internal::CL_SubGradientSolver<T,Base>::soft_thres_kernel_->operator()( to_modify, y_k_temp, thres_ ) );
+		viennacl::copy(std::vector<T> { lambda / L }, thres_);
+		viennacl::ocl::enqueue(
+				foxfire::internal::CL_SubGradientSolver<T, Base>::soft_thres_kernel_->operator()(
+						to_modify, y_k_temp, thres_));
 
-        f_beta = norm_sqr( static_cast<viennacl::vector<T>>(viennacl::linalg::prod( X, y_k_temp ) - Y ) );
+		f_beta = norm_sqr(
+				static_cast<viennacl::vector<T>>(viennacl::linalg::prod(X,
+						y_k_temp) - Y));
 
-        beta_diff = y_k_temp - y_k_old;
+		beta_diff = y_k_temp - y_k_old;
 
-        taylor_term_1 = viennacl::linalg::inner_prod( f_grad, beta_diff );
+		taylor_term_1 = viennacl::linalg::inner_prod(f_grad, beta_diff);
 
-        taylor_term_2 = (L/2.0)*norm_sqr( beta_diff );
+		taylor_term_2 = (L / 2.0) * norm_sqr(beta_diff);
 
-        f_beta_tilde = taylor_term_0 + taylor_term_1 + taylor_term_2;
+		f_beta_tilde = taylor_term_0 + taylor_term_1 + taylor_term_2;
 
-    }
+	}
 
-    //    Eigen::Matrix< T, Eigen::Dynamic, 1 > x_k = Beta;
+	//    Eigen::Matrix< T, Eigen::Dynamic, 1 > x_k = Beta;
 
-    //    x_k_less_1 = x_k;
+	//    x_k_less_1 = x_k;
 
-    //    to_modify = y_k_old - (1.0/L)*f_grad;
-    //    x_k = to_modify.unaryExpr( SoftThres<T>( lambda/L ) );
+	//    to_modify = y_k_old - (1.0/L)*f_grad;
+	//    x_k = to_modify.unaryExpr( SoftThres<T>( lambda/L ) );
 
-    //    T t_k_plus_1 = ( 1.0 + std::sqrt( 1.0 + 4.0 * square( t_k ) ) ) / 2.0;
-    //    t_k = t_k_plus_1;
+	//    T t_k_plus_1 = ( 1.0 + std::sqrt( 1.0 + 4.0 * square( t_k ) ) ) / 2.0;
+	//    t_k = t_k_plus_1;
 
-    //    y_k = x_k + ( t_k - 1.0 ) / ( t_k_plus_1 ) * ( x_k - x_k_less_1 );
+	//    y_k = x_k + ( t_k - 1.0 ) / ( t_k_plus_1 ) * ( x_k - x_k_less_1 );
 
-    //    return x_k;
+	//    return x_k;
 
-    viennacl::vector<T> x_k = Beta;
+	viennacl::vector<T> x_k = Beta;
 
-    x_k_less_1 = x_k;
+	x_k_less_1 = x_k;
 
-    to_modify = y_k_old - (1.0/L)*f_grad;
+	to_modify = y_k_old - (1.0 / L) * f_grad;
 
-    viennacl::copy( std::vector<T> { lambda / L }, thres_ );
-    viennacl::ocl::enqueue( hdim::internal::CL_SubGradientSolver<T,Base>::soft_thres_kernel_->operator()( to_modify, x_k, thres_ ) );
+	viennacl::copy(std::vector<T> { lambda / L }, thres_);
+	viennacl::ocl::enqueue(
+			foxfire::internal::CL_SubGradientSolver<T, Base>::soft_thres_kernel_->operator()(
+					to_modify, x_k, thres_));
 
-    T t_k_plus_1 = ( 1.0 + std::sqrt( 1.0 + 4.0 * square( t_k ) ) ) / 2.0;
-    t_k = t_k_plus_1;
+	T t_k_plus_1 = (1.0 + std::sqrt(1.0 + 4.0 * square(t_k))) / 2.0;
+	t_k = t_k_plus_1;
 
-    y_k = x_k + ( t_k - 1.0 ) / ( t_k_plus_1 ) * ( x_k - x_k_less_1 );
+	y_k = x_k + (t_k - 1.0) / (t_k_plus_1) * (x_k - x_k_less_1);
 
-    return x_k;
+	return x_k;
 }
 #endif
 
 }
-
 
 #endif // VIENNACL_CL_FISTA_HPP

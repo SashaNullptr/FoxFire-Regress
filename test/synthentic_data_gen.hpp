@@ -27,9 +27,6 @@ class normal_random_variable {
 public:
 	normal_random_variable(Mat<T> const& covar) :
 			normal_random_variable(Vect<T>::Zero(covar.rows()), covar) {
-
-//		gen = std::mt19937 { std::random_device { }() };
-
 	}
 
 	normal_random_variable(Vect<T> const& mean, Mat<T> const& covar) :
@@ -37,18 +34,13 @@ public:
 		Eigen::SelfAdjointEigenSolver<Mat<T>> eigenSolver(covar);
 		transform = eigenSolver.eigenvectors()
 				* eigenSolver.eigenvalues().cwiseSqrt().asDiagonal();
-
-//		gen = std::mt19937 { std::random_device { }() };
 	}
 
 	Mat<T> operator()(unsigned int num_obs) const {
 		std::mt19937 gen { std::random_device { }() };
 		std::normal_distribution<T> dist;
 
-//		return mean
-//				+ transform
-//						* Mat<T> { mean.rows(), num_obs }.unaryExpr(
-//								[&](auto x) {return dist(gen);});
+		// Only support a mean value of zero, for now.
 
 		return (Mat<T> { num_obs, transform.cols() }.unaryExpr(
 				[&](T x) {return dist(gen);}) * transform);
@@ -58,8 +50,6 @@ private:
 	Vect<T> mean;
 	Mat<T> transform;
 
-//	std::mt19937 gen;
-//	std::normal_distribution<T> dist;
 };
 
 template<typename T>
@@ -129,22 +119,9 @@ SyntheticDataGenerator<T>::SyntheticDataGenerator(
 		const unsigned int num_observations, const unsigned int num_vars,
 		const unsigned int num_active, const T correlation, const T SNR) {
 	srand(GenerateRandSeed());
-//	BuildSyntheticData(num_observations, num_vars, num_active, correlation,
-//			SNR);
-	Mat<T> sigma_X = (1.0 - correlation) * Mat<T>::Identity(num_vars, num_vars)
-			+ correlation * Mat<T>::Ones(num_vars, num_vars);
-
-	Vect<T> mu_X = Vect<T>::Zero(num_vars);
-	normal_random_variable<T> X_fragment(sigma_X);
-
-	__X = X_fragment(num_observations);
-	__X = std::sqrt(static_cast<T>(num_observations)) / __X.norm() * __X;
-
-	__Beta = BuildBeta(__X, num_observations, num_vars, num_active, correlation,
+	BuildSyntheticData(num_observations, num_vars, num_active, correlation,
 			SNR);
-	Vect<T> noise = randn_vect<T>(num_observations);
 
-	__Y = __X * __Beta + noise;
 }
 
 template<typename T>
@@ -160,7 +137,6 @@ unsigned int SyntheticDataGenerator<T>::GenerateRandSeed() {
 		throw std::runtime_error(err_mesg);
 	}
 
-	//close needs to be preceeded with double colons to avoid namespace conflict with Qt::close().
 	::close(urandom);
 
 	int seed = 0;

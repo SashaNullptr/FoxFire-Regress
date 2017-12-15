@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.11"/>
-<title>HDIM: /home/bephillips2/Qt-Projects/FOSRedux/Generic/generics.hpp File Reference</title>
+<title>FoxFire-regression: /home/bephillips2/eclipse-workspace/FoxFire-regression/Generic/generics.hpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -30,12 +30,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="HDIMLogo_scaled.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">HDIM
+   <div id="projectname">FoxFire-regression
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
-   <div id="projectbrief">Packages for High Dimensional Linear Regression</div>
+   <div id="projectbrief">FoxFire module for Linear Regression</div>
   </td>
  </tr>
  </tbody>
@@ -126,110 +125,111 @@ $(document).ready(function(){initNavTree('generics_8hpp.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhdim_1_1_binarize.html">hdim::Binarize&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor to convert vector of values into support vector.  <a href="structhdim_1_1_binarize.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoxfire_1_1_binarize.html">foxfire::Binarize&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor to convert vector of values into support vector.  <a href="structfoxfire_1_1_binarize.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhdim_1_1_soft_thres.html">hdim::SoftThres&lt; T &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Soft Threshold functor used to apply hdim::soft_threshold to each element in a matrix or vector.  <a href="structhdim_1_1_soft_thres.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoxfire_1_1_soft_thres.html">foxfire::SoftThres&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Soft Threshold functor used to apply hdim::soft_threshold to each element in a matrix or vector.  <a href="structfoxfire_1_1_soft_thres.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structhdim_1_1_support_sift.html">hdim::SupportSift&lt; T &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfoxfire_1_1_support_sift.html">foxfire::SupportSift&lt; T &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5f1fc813ff818b5e01708a6b141c8888"><td class="memTemplParams" colspan="2"><a class="anchor" id="a5f1fc813ff818b5e01708a6b141c8888"></a>
+<tr class="memitem:a2ef05b9df58beb78f0ea22704313742d"><td class="memTemplParams" colspan="2"><a class="anchor" id="a2ef05b9df58beb78f0ea22704313742d"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a5f1fc813ff818b5e01708a6b141c8888"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hdim::StdDev</b> (const Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;vect)</td></tr>
-<tr class="separator:a5f1fc813ff818b5e01708a6b141c8888"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a47c21fd65c6b6f574eebdba68c6a19f6"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a47c21fd65c6b6f574eebdba68c6a19f6"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a47c21fd65c6b6f574eebdba68c6a19f6">hdim::Normalize</a> (const Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;mat)</td></tr>
-<tr class="memdesc:a47c21fd65c6b6f574eebdba68c6a19f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the mean of a matrix to 0 and the standard deviation to 1.  <a href="generics_8hpp.html#a47c21fd65c6b6f574eebdba68c6a19f6">More...</a><br /></td></tr>
-<tr class="separator:a47c21fd65c6b6f574eebdba68c6a19f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6a6cb59831de2199732730217353269"><td class="memTemplParams" colspan="2"><a class="anchor" id="af6a6cb59831de2199732730217353269"></a>
+<tr class="memitem:a2ef05b9df58beb78f0ea22704313742d"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a2ef05b9df58beb78f0ea22704313742d">foxfire::StdDev</a> (const Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;vect)</td></tr>
+<tr class="memdesc:a2ef05b9df58beb78f0ea22704313742d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the standard deviation of an Eigen3 vector. <br /></td></tr>
+<tr class="separator:a2ef05b9df58beb78f0ea22704313742d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a803d7bb9e9a19cc3af16151a316f6866"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a803d7bb9e9a19cc3af16151a316f6866"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a803d7bb9e9a19cc3af16151a316f6866">foxfire::Normalize</a> (const Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;mat)</td></tr>
+<tr class="memdesc:a803d7bb9e9a19cc3af16151a316f6866"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the mean of a matrix to 0 and the standard deviation to 1.  <a href="generics_8hpp.html#a803d7bb9e9a19cc3af16151a316f6866">More...</a><br /></td></tr>
+<tr class="separator:a803d7bb9e9a19cc3af16151a316f6866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e5f28b2992f2ee95ce4f13e8ebdf1d9"><td class="memTemplParams" colspan="2"><a class="anchor" id="a9e5f28b2992f2ee95ce4f13e8ebdf1d9"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:af6a6cb59831de2199732730217353269"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hdim::Normalize</b> (Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;mat)</td></tr>
-<tr class="separator:af6a6cb59831de2199732730217353269"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac19e22668ab6058b56125bb2d787f2d5"><td class="memTemplParams" colspan="2"><a class="anchor" id="ac19e22668ab6058b56125bb2d787f2d5"></a>
+<tr class="memitem:a9e5f28b2992f2ee95ce4f13e8ebdf1d9"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>foxfire::Normalize</b> (Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;mat)</td></tr>
+<tr class="separator:a9e5f28b2992f2ee95ce4f13e8ebdf1d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af055bfd5a9f3eff3d7871a36a3c1a392"><td class="memTemplParams" colspan="2"><a class="anchor" id="af055bfd5a9f3eff3d7871a36a3c1a392"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ac19e22668ab6058b56125bb2d787f2d5"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#ac19e22668ab6058b56125bb2d787f2d5">hdim::Normalize</a> (const Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;mat)</td></tr>
-<tr class="memdesc:ac19e22668ab6058b56125bb2d787f2d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded version of hdim::Normalize to accomadate vectors. <br /></td></tr>
-<tr class="separator:ac19e22668ab6058b56125bb2d787f2d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d4a53a1b93612e5dd9147aed0b45d13"><td class="memTemplParams" colspan="2"><a class="anchor" id="a3d4a53a1b93612e5dd9147aed0b45d13"></a>
+<tr class="memitem:af055bfd5a9f3eff3d7871a36a3c1a392"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#af055bfd5a9f3eff3d7871a36a3c1a392">foxfire::Normalize</a> (const Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;mat)</td></tr>
+<tr class="memdesc:af055bfd5a9f3eff3d7871a36a3c1a392"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded version of hdim::Normalize to accommodate vectors. <br /></td></tr>
+<tr class="separator:af055bfd5a9f3eff3d7871a36a3c1a392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a01f543559ac238024c3767b651d98a"><td class="memTemplParams" colspan="2"><a class="anchor" id="a2a01f543559ac238024c3767b651d98a"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3d4a53a1b93612e5dd9147aed0b45d13"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a3d4a53a1b93612e5dd9147aed0b45d13">hdim::Normalize</a> (Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;mat)</td></tr>
-<tr class="memdesc:a3d4a53a1b93612e5dd9147aed0b45d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded version of hdim::Normalize to accomadate vectors. <br /></td></tr>
-<tr class="separator:a3d4a53a1b93612e5dd9147aed0b45d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a406e0732a7d43381d66ecdb1d973cdab"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a406e0732a7d43381d66ecdb1d973cdab"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a406e0732a7d43381d66ecdb1d973cdab">hdim::build_matrix</a> (unsigned int num_rows, unsigned int num_cols, T(*mat_func)(unsigned int, unsigned int))</td></tr>
-<tr class="memdesc:a406e0732a7d43381d66ecdb1d973cdab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a matrix using a function that depends on row and column indices.  <a href="generics_8hpp.html#a406e0732a7d43381d66ecdb1d973cdab">More...</a><br /></td></tr>
-<tr class="separator:a406e0732a7d43381d66ecdb1d973cdab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abecf037eb29874df8545541dd3840da8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:abecf037eb29874df8545541dd3840da8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#abecf037eb29874df8545541dd3840da8">hdim::sweep_matrix</a> (Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;mat, T(*mat_func)(unsigned int, unsigned int))</td></tr>
-<tr class="memdesc:abecf037eb29874df8545541dd3840da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">sweep_matrix  <a href="generics_8hpp.html#abecf037eb29874df8545541dd3840da8">More...</a><br /></td></tr>
-<tr class="separator:abecf037eb29874df8545541dd3840da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad17061e0f1835159012dabbb24097141"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad17061e0f1835159012dabbb24097141"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#ad17061e0f1835159012dabbb24097141">hdim::square</a> (T &amp;val)</td></tr>
-<tr class="memdesc:ad17061e0f1835159012dabbb24097141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the square of a value.  <a href="generics_8hpp.html#ad17061e0f1835159012dabbb24097141">More...</a><br /></td></tr>
-<tr class="separator:ad17061e0f1835159012dabbb24097141"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4e74a775b3bf698a6eb15db78148f18"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad4e74a775b3bf698a6eb15db78148f18"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#ad4e74a775b3bf698a6eb15db78148f18">hdim::LogScaleVector</a> (T lower_bound, T upper_bound, unsigned int num_elements)</td></tr>
-<tr class="memdesc:ad4e74a775b3bf698a6eb15db78148f18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a vector of logarithmically equally spaced points.  <a href="generics_8hpp.html#ad4e74a775b3bf698a6eb15db78148f18">More...</a><br /></td></tr>
-<tr class="separator:ad4e74a775b3bf698a6eb15db78148f18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6cd4248c58b9027ac878a3e768d3f9e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aa6cd4248c58b9027ac878a3e768d3f9e"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#aa6cd4248c58b9027ac878a3e768d3f9e">hdim::sgn</a> (T val)</td></tr>
-<tr class="memdesc:aa6cd4248c58b9027ac878a3e768d3f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sign function defined as.  <a href="generics_8hpp.html#aa6cd4248c58b9027ac878a3e768d3f9e">More...</a><br /></td></tr>
-<tr class="separator:aa6cd4248c58b9027ac878a3e768d3f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9873ec5b4ca42c2bd280841d4585389f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a9873ec5b4ca42c2bd280841d4585389f"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a9873ec5b4ca42c2bd280841d4585389f">hdim::pos_part</a> (T x)</td></tr>
-<tr class="memdesc:a9873ec5b4ca42c2bd280841d4585389f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The positive part function defined as.  <a href="generics_8hpp.html#a9873ec5b4ca42c2bd280841d4585389f">More...</a><br /></td></tr>
-<tr class="separator:a9873ec5b4ca42c2bd280841d4585389f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56fdb512c670ac5bb5d060bfe3511ff1"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a56fdb512c670ac5bb5d060bfe3511ff1"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a56fdb512c670ac5bb5d060bfe3511ff1">hdim::soft_threshold</a> (T x, T y)</td></tr>
-<tr class="memdesc:a56fdb512c670ac5bb5d060bfe3511ff1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The proximal ( soft thresholding ) operator defined as.  <a href="generics_8hpp.html#a56fdb512c670ac5bb5d060bfe3511ff1">More...</a><br /></td></tr>
-<tr class="separator:a56fdb512c670ac5bb5d060bfe3511ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c8be46b7676a3d3327625568b16bcc3"><td class="memTemplParams" colspan="2"><a class="anchor" id="a8c8be46b7676a3d3327625568b16bcc3"></a>
+<tr class="memitem:a2a01f543559ac238024c3767b651d98a"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a2a01f543559ac238024c3767b651d98a">foxfire::Normalize</a> (Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;mat)</td></tr>
+<tr class="memdesc:a2a01f543559ac238024c3767b651d98a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overloaded version of hdim::Normalize to accommodate vectors. <br /></td></tr>
+<tr class="separator:a2a01f543559ac238024c3767b651d98a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ecb4b166d95fd30500a9e3bc65f765e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a4ecb4b166d95fd30500a9e3bc65f765e"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a4ecb4b166d95fd30500a9e3bc65f765e">foxfire::build_matrix</a> (unsigned int num_rows, unsigned int num_cols, T(*mat_func)(unsigned int, unsigned int))</td></tr>
+<tr class="memdesc:a4ecb4b166d95fd30500a9e3bc65f765e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a matrix using a function that depends on row and column indices.  <a href="generics_8hpp.html#a4ecb4b166d95fd30500a9e3bc65f765e">More...</a><br /></td></tr>
+<tr class="separator:a4ecb4b166d95fd30500a9e3bc65f765e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00dc6129fc139fb7713f6cc5f90d6a39"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a00dc6129fc139fb7713f6cc5f90d6a39"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a00dc6129fc139fb7713f6cc5f90d6a39">foxfire::sweep_matrix</a> (Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;mat, T(*mat_func)(unsigned int, unsigned int))</td></tr>
+<tr class="memdesc:a00dc6129fc139fb7713f6cc5f90d6a39"><td class="mdescLeft">&#160;</td><td class="mdescRight">sweep_matrix  <a href="generics_8hpp.html#a00dc6129fc139fb7713f6cc5f90d6a39">More...</a><br /></td></tr>
+<tr class="separator:a00dc6129fc139fb7713f6cc5f90d6a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8d3236d535eb1dd6a2f4997dbcb8b27"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ac8d3236d535eb1dd6a2f4997dbcb8b27"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#ac8d3236d535eb1dd6a2f4997dbcb8b27">foxfire::square</a> (T &amp;val)</td></tr>
+<tr class="memdesc:ac8d3236d535eb1dd6a2f4997dbcb8b27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute the square of a value.  <a href="generics_8hpp.html#ac8d3236d535eb1dd6a2f4997dbcb8b27">More...</a><br /></td></tr>
+<tr class="separator:ac8d3236d535eb1dd6a2f4997dbcb8b27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3eafab12f8cbb7b895b0c144a1d65c7"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:ad3eafab12f8cbb7b895b0c144a1d65c7"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#ad3eafab12f8cbb7b895b0c144a1d65c7">foxfire::LogScaleVector</a> (T lower_bound, T upper_bound, unsigned int num_elements)</td></tr>
+<tr class="memdesc:ad3eafab12f8cbb7b895b0c144a1d65c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a vector of logarithmically equally spaced points.  <a href="generics_8hpp.html#ad3eafab12f8cbb7b895b0c144a1d65c7">More...</a><br /></td></tr>
+<tr class="separator:ad3eafab12f8cbb7b895b0c144a1d65c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03ef78cc8b4804766dcc007ceb2acd35"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a03ef78cc8b4804766dcc007ceb2acd35"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a03ef78cc8b4804766dcc007ceb2acd35">foxfire::sgn</a> (T val)</td></tr>
+<tr class="memdesc:a03ef78cc8b4804766dcc007ceb2acd35"><td class="mdescLeft">&#160;</td><td class="mdescRight">The sign function defined as.  <a href="generics_8hpp.html#a03ef78cc8b4804766dcc007ceb2acd35">More...</a><br /></td></tr>
+<tr class="separator:a03ef78cc8b4804766dcc007ceb2acd35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c7778ebdfe39280e714939dbfdaedb5"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a5c7778ebdfe39280e714939dbfdaedb5"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a5c7778ebdfe39280e714939dbfdaedb5">foxfire::pos_part</a> (T x)</td></tr>
+<tr class="memdesc:a5c7778ebdfe39280e714939dbfdaedb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">The positive part function defined as.  <a href="generics_8hpp.html#a5c7778ebdfe39280e714939dbfdaedb5">More...</a><br /></td></tr>
+<tr class="separator:a5c7778ebdfe39280e714939dbfdaedb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65c7af185a6046e248199225936507c0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a65c7af185a6046e248199225936507c0"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a65c7af185a6046e248199225936507c0">foxfire::soft_threshold</a> (T x, T y)</td></tr>
+<tr class="memdesc:a65c7af185a6046e248199225936507c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The proximal ( soft thresholding ) operator defined as.  <a href="generics_8hpp.html#a65c7af185a6046e248199225936507c0">More...</a><br /></td></tr>
+<tr class="separator:a65c7af185a6046e248199225936507c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8de16de2165bbe80504a6baa40fe5617"><td class="memTemplParams" colspan="2"><a class="anchor" id="a8de16de2165bbe80504a6baa40fe5617"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a8c8be46b7676a3d3327625568b16bcc3"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a8c8be46b7676a3d3327625568b16bcc3">hdim::prox</a> (T x, T lambda)</td></tr>
-<tr class="memdesc:a8c8be46b7676a3d3327625568b16bcc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A functional equivalent of hdim::soft_threshold, but possibly faster. <br /></td></tr>
-<tr class="separator:a8c8be46b7676a3d3327625568b16bcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdd207ec607eebf0edc774c69f533265"><td class="memTemplParams" colspan="2"><a class="anchor" id="acdd207ec607eebf0edc774c69f533265"></a>
+<tr class="memitem:a8de16de2165bbe80504a6baa40fe5617"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="generics_8hpp.html#a8de16de2165bbe80504a6baa40fe5617">foxfire::prox</a> (T x, T lambda)</td></tr>
+<tr class="memdesc:a8de16de2165bbe80504a6baa40fe5617"><td class="mdescLeft">&#160;</td><td class="mdescRight">A functional equivalent of hdim::soft_threshold, but possibly faster. <br /></td></tr>
+<tr class="separator:a8de16de2165bbe80504a6baa40fe5617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3f9ab28ce4dacb905465d5b99e06568"><td class="memTemplParams" colspan="2"><a class="anchor" id="ad3f9ab28ce4dacb905465d5b99e06568"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:acdd207ec607eebf0edc774c69f533265"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hdim::soft_threshold_mat</b> (const Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;mat, const T lambda)</td></tr>
-<tr class="separator:acdd207ec607eebf0edc774c69f533265"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af47ad04252e8cb657f1efd10d8e03f42"><td class="memTemplParams" colspan="2"><a class="anchor" id="af47ad04252e8cb657f1efd10d8e03f42"></a>
+<tr class="memitem:ad3f9ab28ce4dacb905465d5b99e06568"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>foxfire::soft_threshold_mat</b> (const Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;mat, const T lambda)</td></tr>
+<tr class="separator:ad3f9ab28ce4dacb905465d5b99e06568"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c7f212c815f0e136b7cedcd293d044d"><td class="memTemplParams" colspan="2"><a class="anchor" id="a4c7f212c815f0e136b7cedcd293d044d"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:af47ad04252e8cb657f1efd10d8e03f42"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; int, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hdim::GenerateSupport</b> (const Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;coefficients, T cut_off)</td></tr>
-<tr class="separator:af47ad04252e8cb657f1efd10d8e03f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c49962cdf45ef046e1b0600eed65487"><td class="memTemplParams" colspan="2"><a class="anchor" id="a5c49962cdf45ef046e1b0600eed65487"></a>
+<tr class="memitem:a4c7f212c815f0e136b7cedcd293d044d"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; int, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>foxfire::GenerateSupport</b> (const Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;coefficients, T cut_off)</td></tr>
+<tr class="separator:a4c7f212c815f0e136b7cedcd293d044d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ff5d18a5dde7909c02f78a380cc1269"><td class="memTemplParams" colspan="2"><a class="anchor" id="a8ff5d18a5dde7909c02f78a380cc1269"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a5c49962cdf45ef046e1b0600eed65487"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hdim::negative_index</b> (const Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;mat_in, int index)</td></tr>
-<tr class="separator:a5c49962cdf45ef046e1b0600eed65487"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac820f56b18e1300af055bf51f33c5b97"><td class="memTemplParams" colspan="2"><a class="anchor" id="ac820f56b18e1300af055bf51f33c5b97"></a>
+<tr class="memitem:a8ff5d18a5dde7909c02f78a380cc1269"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>foxfire::negative_index</b> (const Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;mat_in, int index)</td></tr>
+<tr class="separator:a8ff5d18a5dde7909c02f78a380cc1269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31a79dbdf9f75b4d499ae68b7e9c48b8"><td class="memTemplParams" colspan="2"><a class="anchor" id="a31a79dbdf9f75b4d499ae68b7e9c48b8"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ac820f56b18e1300af055bf51f33c5b97"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hdim::duality_gap</b> (const Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;X, const Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;Y, const Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;Beta, T r_stats_it)</td></tr>
-<tr class="separator:ac820f56b18e1300af055bf51f33c5b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a778b95188823d0257c1f6223f3bd0e28"><td class="memTemplParams" colspan="2"><a class="anchor" id="a778b95188823d0257c1f6223f3bd0e28"></a>
+<tr class="memitem:a31a79dbdf9f75b4d499ae68b7e9c48b8"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><b>foxfire::duality_gap</b> (const Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;X, const Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;Y, const Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;Beta, T r_stats_it)</td></tr>
+<tr class="separator:a31a79dbdf9f75b4d499ae68b7e9c48b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af42dc5abaf45567d21eb1731c6e4a215"><td class="memTemplParams" colspan="2"><a class="anchor" id="af42dc5abaf45567d21eb1731c6e4a215"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a778b95188823d0257c1f6223f3bd0e28"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hdim::slice</b> (const Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;org, const std::vector&lt; unsigned int &gt; &amp;indices)</td></tr>
-<tr class="separator:a778b95188823d0257c1f6223f3bd0e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cf89e30bfdb4c10c94b24fa3c654528"><td class="memTemplParams" colspan="2"><a class="anchor" id="a3cf89e30bfdb4c10c94b24fa3c654528"></a>
+<tr class="memitem:af42dc5abaf45567d21eb1731c6e4a215"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>foxfire::slice</b> (const Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;org, const std::vector&lt; unsigned int &gt; &amp;indices)</td></tr>
+<tr class="separator:af42dc5abaf45567d21eb1731c6e4a215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89a60d1e689b65caddad4c86d37b3f95"><td class="memTemplParams" colspan="2"><a class="anchor" id="a89a60d1e689b65caddad4c86d37b3f95"></a>
 template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a3cf89e30bfdb4c10c94b24fa3c654528"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>hdim::slice</b> (const Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;org, const std::vector&lt; unsigned int &gt; &amp;indices)</td></tr>
-<tr class="separator:a3cf89e30bfdb4c10c94b24fa3c654528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89a60d1e689b65caddad4c86d37b3f95"><td class="memTemplItemLeft" align="right" valign="top">Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><b>foxfire::slice</b> (const Eigen::Matrix&lt; T, Eigen::Dynamic, 1 &gt; &amp;org, const std::vector&lt; unsigned int &gt; &amp;indices)</td></tr>
+<tr class="separator:a89a60d1e689b65caddad4c86d37b3f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Generic linear algebra functions. </p>
 
 <p>Definition in file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="file_a406e0732a7d43381d66ecdb1d973cdab"></a>
+<a class="anchor" id="file_a4ecb4b166d95fd30500a9e3bc65f765e"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Matrix&lt;T, Eigen::Dynamic, Eigen::Dynamic&gt; hdim::build_matrix </td>
+          <td class="memname">Eigen::Matrix&lt;T, Eigen::Dynamic, Eigen::Dynamic&gt; foxfire::build_matrix </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>num_rows</em>, </td>
@@ -265,18 +265,18 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A matrix populated with values assigned by mat_func( i, j ) </dd></dl>
 
-<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00131">131</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
+<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00134">134</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="file_ad4e74a775b3bf698a6eb15db78148f18"></a>
+<a class="anchor" id="file_ad3eafab12f8cbb7b895b0c144a1d65c7"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; T &gt; hdim::LogScaleVector </td>
+          <td class="memname">std::vector&lt; T &gt; foxfire::LogScaleVector </td>
           <td>(</td>
           <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>lower_bound</em>, </td>
@@ -315,18 +315,18 @@ template&lt;typename T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 <p>Vector of logarithmically equally spaced points </p>
 
-<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00198">198</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
+<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00201">201</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="file_a47c21fd65c6b6f574eebdba68c6a19f6"></a>
+<a class="anchor" id="file_a803d7bb9e9a19cc3af16151a316f6866"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">Eigen::Matrix&lt;T, Eigen::Dynamic, Eigen::Dynamic&gt; hdim::Normalize </td>
+          <td class="memname">Eigen::Matrix&lt;T, Eigen::Dynamic, Eigen::Dynamic&gt; foxfire::Normalize </td>
           <td>(</td>
           <td class="paramtype">const Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;&#160;</td>
           <td class="paramname"><em>mat</em></td><td>)</td>
@@ -344,18 +344,18 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00067">67</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
+<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00070">70</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="file_a9873ec5b4ca42c2bd280841d4585389f"></a>
+<a class="anchor" id="file_a5c7778ebdfe39280e714939dbfdaedb5"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T hdim::pos_part </td>
+          <td class="memname">T foxfire::pos_part </td>
           <td>(</td>
           <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>x</em></td><td>)</td>
@@ -369,18 +369,18 @@ template&lt;typename T &gt; </div>
 <img class="formulaDsp" alt="\[ x^{+} \equiv \begin{cases} x &amp; \text{if } x \geq 0\\ 0 &amp; \text{if } x &lt; 0\\ \end{cases} \]" src="form_2.png"/>
 </p>
  
-<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00262">262</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
+<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00265">265</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="file_aa6cd4248c58b9027ac878a3e768d3f9e"></a>
+<a class="anchor" id="file_a03ef78cc8b4804766dcc007ceb2acd35"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T hdim::sgn </td>
+          <td class="memname">T foxfire::sgn </td>
           <td>(</td>
           <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>val</em></td><td>)</td>
@@ -394,18 +394,18 @@ template&lt;typename T &gt; </div>
 <img class="formulaDsp" alt="\[ sgn(x) \equiv \begin{cases} 1 &amp; \text{if } x &gt; 0 \\ 0 &amp; \text{if } x = 0 \\ -1&amp; \text{if } x &lt; 0 \end{cases} \]" src="form_1.png"/>
 </p>
  
-<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00246">246</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
+<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00249">249</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="file_a56fdb512c670ac5bb5d060bfe3511ff1"></a>
+<a class="anchor" id="file_a65c7af185a6046e248199225936507c0"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T hdim::soft_threshold </td>
+          <td class="memname">T foxfire::soft_threshold </td>
           <td>(</td>
           <td class="paramtype">T&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -436,18 +436,18 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00276">276</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
+<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00279">279</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="file_ad17061e0f1835159012dabbb24097141"></a>
+<a class="anchor" id="file_ac8d3236d535eb1dd6a2f4997dbcb8b27"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">T hdim::square </td>
+          <td class="memname">T foxfire::square </td>
           <td>(</td>
           <td class="paramtype">T &amp;&#160;</td>
           <td class="paramname"><em>val</em></td><td>)</td>
@@ -465,18 +465,18 @@ template&lt;typename T &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The squared quantity </dd></dl>
 
-<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00169">169</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
+<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00172">172</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="file_abecf037eb29874df8545541dd3840da8"></a>
+<a class="anchor" id="file_a00dc6129fc139fb7713f6cc5f90d6a39"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void hdim::sweep_matrix </td>
+          <td class="memname">void foxfire::sweep_matrix </td>
           <td>(</td>
           <td class="paramtype">Eigen::Matrix&lt; T, Eigen::Dynamic, Eigen::Dynamic &gt; &amp;&#160;</td>
           <td class="paramname"><em>mat</em>, </td>
@@ -503,7 +503,7 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00150">150</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
+<p>Definition at line <a class="el" href="generics_8hpp_source.html#l00153">153</a> of file <a class="el" href="generics_8hpp_source.html">generics.hpp</a>.</p>
 
 </div>
 </div>

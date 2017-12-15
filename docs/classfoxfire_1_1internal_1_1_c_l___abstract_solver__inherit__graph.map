@@ -1,0 +1,4 @@
+<map id="foxfire::internal::CL_AbstractSolver&lt; T &gt;" name="foxfire::internal::CL_AbstractSolver&lt; T &gt;">
+<area shape="rect" id="node3" href="$classfoxfire_1_1internal_1_1_c_l___solver.html" title="Abstract base class for solvers that do not make use of GAP SAFE screening rules. ..." alt="" coords="29,184,145,225"/>
+<area shape="rect" id="node2" href="$classfoxfire_1_1internal_1_1_base_solver.html" title="Abstract base class for all iterative solvers. " alt="" coords="27,5,148,47"/>
+</map>

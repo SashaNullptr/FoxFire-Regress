@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['js_5ffos',['JS_FOS',['../class_j_s___f_o_s.html',1,'']]]
+  ['lazycoordinatedescent',['LazyCoordinateDescent',['../classfoxfire_1_1_lazy_coordinate_descent.html',1,'foxfire']]]
 ];
