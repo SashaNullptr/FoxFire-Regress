@@ -42,3 +42,9 @@ A sample GCC command might look like `g++ $PROGRAM -DVIENNACL_WITH_OPENCL -DVIEN
 
 The HDIM package is licensed under the MIT license. To
 view the MIT license please consult `LICENSE.txt`.
+
+## Acknowledgements
+
+`FoxFire-regression` is based on the [FOS](https://github.com/LedererLab/FOS)
+package produced by Johannes Lederer, Néhémy Lim and Saba Noorassa as part of the
+ `HDIM` research group.
