@@ -24,7 +24,7 @@ Eigen::Matrix<T, Eigen::Dynamic, 1> L0_EM(
 	Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic> eye = Eigen::Matrix<T, Eigen::Dynamic, Eigen::Dynamic>::Identity(n, n);
 
 	Eigen::Matrix<T, Eigen::Dynamic, 1> theta = ( X_t * X + Lambda * eye).inverse() * X_t * Y;
-	Eigen::Matrix< T, Eigen::Dynamic, T > eta = theta
+	Eigen::Matrix< T, Eigen::Dynamic, 1 > eta = theta;
 
 	while ( ( theta - eta ).norm() >= epsilon_1 ) {
 
@@ -33,9 +33,9 @@ Eigen::Matrix<T, Eigen::Dynamic, 1> L0_EM(
 		theta = ( X_eta_t.transpose() * X + Lambda * eye).inverse() * X_eta_t.transpose() * Y;
 	}
 
-	for( auto& elem : theta ) {
-		if( std::abs( elem ) < epsilon_0 ) {
-			elem = 0.0;
+	for( unsigned int i = 0; i < theta.size() ; i++ ) {
+		if( std::abs( theta[i] ) < epsilon_0 ) {
+			theta[i] = 0.0;
 		}
 	}
 
