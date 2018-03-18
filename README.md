@@ -1,4 +1,5 @@
 # FoxFire/regression
+![foxfire-logo](logo_sized.png)
 
 `regression` is a component of the `FoxFire`
 project that handles regularized linear regression.
