@@ -1,5 +1,4 @@
-# FoxFire/regression
-![foxfire-logo](logo_sized.png)
+# FoxFire/regression![foxfire-logo](logo_sized.png)
 
 `regression` is a component of the `FoxFire`
 project that handles regularized linear regression.
@@ -41,7 +40,7 @@ A sample GCC command might look like `g++ $PROGRAM -DVIENNACL_WITH_OPENCL -DVIEN
 
 ## Licensing
 
-The HDIM package is licensed under the MIT license. To
+The `FoxFire-regression` package is licensed under the MIT license. To
 view the MIT license please consult `LICENSE.txt`.
 
 ## Acknowledgements
