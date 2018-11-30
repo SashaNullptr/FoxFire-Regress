@@ -100,8 +100,8 @@ bool TestFOS(SolverType s_type) {
 
 	FOSTester<T> tester;
 
-	unsigned int N = rand() % 100 + 2;
-	unsigned int P = rand() % 100 + 2;
+	unsigned int N = rand() % 500 + 2;
+	unsigned int P = rand() % 500 + 2;
 
 	DEBUG_PRINT( "Test matrix size: " << N << " x " << P );
 
@@ -111,22 +111,22 @@ bool TestFOS(SolverType s_type) {
 TEST(FOS, ISTA) {
 	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::ista));
 	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::screen_ista));
-	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::ista));
-	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::screen_ista));
+//	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::ista));
+//	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::screen_ista));
 }
 
 TEST(FOS, FISTA) {
 	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::fista));
 	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::screen_fista));
-	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::fista));
-	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::screen_fista));
+//	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::fista));
+//	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::screen_fista));
 }
 
 TEST(FOS, CoordinateDescent) {
 	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::cd));
 	EXPECT_TRUE(TestFOS<double>(foxfire::SolverType::screen_cd));
-	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::cd));
-	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::screen_cd));
+//	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::cd));
+//	EXPECT_TRUE(TestFOS<float>(foxfire::SolverType::screen_cd));
 }
 
 #ifdef W_OPENCL
